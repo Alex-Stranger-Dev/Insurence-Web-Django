@@ -36,8 +36,8 @@
                                 <form action="" method="get">
                                     <div class="form-group form-row">
                                         <div class="col-10">
-                                            <input type="text" class="form-control" name="query" placeholder="Search by name">
-                                            <input type="hidden" name="search_by" value="name">
+                                            <input type="text" class="form-control" name="query" placeholder="Search by second name">
+                                            <input type="hidden" name="search_by" value="second_name">
                                         </div>
                                         <div class="col-2">
                                             <button type="submit" class="btn btn-success">Search</button>
@@ -70,23 +70,25 @@
                     <table class="table">
                         <thead>
                         <tr>
-                            {% comment %} <th scope="col">#</th> {% endcomment %}
                             <th scope="col">Name</th>
                             <th scope="col">Second name</th>
                             <th scope="col">Age</th>
+                            <th scope="col">Sum of insurence</th>
                             <th scope="col">Phones</th>
-                            <th scope="col">Action</th>
+                            <th scope="col">Delete</th>
+                            <th scope="col">Edit</th>
                         </tr>
                         </thead>
                         <tbody>
                         {% for person in persons %}
                             <tr>
-                                {% comment %} <th scope="row">{{ person.pk }}</th> {% endcomment %}
                                 <td>{{ person.name }}</td>
                                 <td>{{person.second_name}}</td>
                                 <td>{{ person.age}}</td>
+                                <td>{{person.sum_of_insurence}}</td>
                                 <td>{{ person.all_phones_to_string}}</td>
                                 <td><a class="btn btn-sm btn-danger" href="{% url 'delete' person.pk %}">Delete</a></td>
+                                <td><a class="btn btn-sm btn-danger" href="{% url 'edit' person.pk %}">Edit date</a></td>
                             </tr>
                         {% endfor %}
                         </tbody>

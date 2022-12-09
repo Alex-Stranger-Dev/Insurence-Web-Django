@@ -1,3 +1,4 @@
+{% load crispy_forms_tags %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -19,7 +20,7 @@
                         <a class="nav-link" href="{% url 'home' %}">Home <span class="sr-only">(current)</span></a>
                     </li>
                     <li class="nav-item active">
-                        <a class="nav-link" href="{% url 'add' %}">Add <span class="sr-only">(current)</span></a>
+                        <a class="nav-link" href="{% url 'home' %}">Add <span class="sr-only">(current)</span></a>
                     </li>
                     <li class="nav-item active">
                         <a class="nav-link" href="{% url 'home' %}">All <span class="sr-only">(current)</span></a>
@@ -27,17 +28,12 @@
                 </ul>
             </div>
         </nav>
-        <div class="card">
-            <div class="card-body">
-                <h5 class="card-title">Delete {{ object.second_name }}?</h5>
-                <p class="card-text">
-                <form action="" method="post">
-                    {% csrf_token %}
-                    <button type="submit" class="btn btn-danger">Confim</button>
-                </form>
-                </p>
-            </div>
-        </div>
+        <h1>Edit Customer</h1>
+        <form action="" method="post">
+            {% csrf_token %}
+            {{ form|crispy }}
+            <button type="submit" class="btn btn-success">Update</button>
+        </form>
     </div>
     <footer class="page-footer font-small blue" >
         <div class="footer-copyright text-center py-3">© 2022 Alex-Dev:

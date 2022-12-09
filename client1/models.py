@@ -9,13 +9,14 @@ class Persone(models.Model):
     name = models.CharField("Name", max_length=30, blank=False)
     second_name = models.CharField("Second name", max_length=35, blank=False, default=str)
     age = models.IntegerField("Age", default=0)
+    sum_of_insurence = models.IntegerField("Sum of insurence", default=0)
     
     
     
     
     def __str__(self):
         
-        return f'{self.name} {self.second_name} {self.age}'
+        return f'{self.name} {self.second_name} {self.age} {self.sum_of_insurence}'
     
     
     def all_phones_to_string(self):

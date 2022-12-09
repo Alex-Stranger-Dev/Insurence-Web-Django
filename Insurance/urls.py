@@ -20,12 +20,13 @@ from phonenumber_field.modelfields import PhoneNumberField
 
 #from . import views
 #from django.urls import path
-from client1.views import HomePageView, AddNewFormView, DeletePersonView
-#from django.views import HomePageView, AddPhoneFormView, DeletePhoneView
+from client1.views import HomePageView, AddNewFormView, DeletePersonView, EditFormView
+
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('add', AddNewFormView.as_view(), name='add'),
+    path('edit/<int:pk>',EditFormView.as_view(), name='edit' ),
     path('delete/<int:pk>', DeletePersonView.as_view(), name='delete'),
     path('', HomePageView.as_view(), name='home'),
 ]
