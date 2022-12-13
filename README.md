@@ -1,2 +1,2 @@
-# Insurence-Web-Django
+# Insurence-Company Web-Django
 Website training project
